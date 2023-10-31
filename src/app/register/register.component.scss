@@ -14,9 +14,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    display: inline-block;
 }
 input{
-    width: 100%;
+    width: 100% ;
     height: 48px;
     border:none;
     outline: none;
@@ -34,5 +35,16 @@ input{
     background-color: #01ac2d;
     border:1px solid #01ac2d;
     cursor: pointer;
-    color: white;
+    color: #ffffff;
+}
+span{
+    font-size: 11px;
+    color: #f1b143;
+    text-transform: uppercase;
+    display:block;
+}
+p{
+    display: inline-block;
+    font-size: 9px;
+    color: red;
 }

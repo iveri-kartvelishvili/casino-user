@@ -1,8 +1,15 @@
 <div class="main">
     <div class="main-child">
-        <input type="text" placeholder="Username">
-        <input type="text" placeholder="Age">
-        <input type="text" placeholder="Deposit">
-        <button class="mybut">ENTER</button>
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <input type="text" placeholder="Username" formControlName="Username">
+        <span *ngIf="Username && Username.invalid && Username.touched">enter your username</span>
+        <input type="text" placeholder="Age" formControlName="Age">
+        <span *ngIf="Age && Age.invalid && Age.touched">ENTER YOUR AGE (<p>WARNING! YOUR AGE MUST BE OVER 24</p>)</span>
+        <input type="text" placeholder="Deposit" formControlName="Deposit">
+        <span *ngIf="Deposit && Deposit.invalid && Deposit.touched">ENTER YOUR DEPOSIT</span>
+        <button 
+        [disabled]="loginForm.invalid"
+        class="mybut">ENTER</button>
+    </form>
     </div>
 </div>
